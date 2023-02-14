@@ -21,12 +21,11 @@ export default function ThemeToggle() {
     return (
         <button
             aria-label={`Change to ${inactiveTheme} mode`}
-            className="button--theme-toggle"
             onClick={() => setActiveTheme(inactiveTheme)}
         >
             {activeTheme === 'light' ?
-                <LightModeIcon fontSize='1em' /> :
-                <DarkModeIcon fontSize='1em' />}
+                <LightModeIcon fontSize="medium" /> :
+                <DarkModeIcon fontSize="medium" />}
         </button>
     )
 }

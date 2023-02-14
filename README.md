@@ -1,4 +1,8 @@
-# CrowBlog
+# Raccoon Country
+
+A blog dedicated to sharing photos of hyperglycemic raccoons
+
+--
 
 References:
  - Following along to: https://www.youtube.com/watch?app=desktop&v=HYv55DhgTuA
@@ -9,9 +13,9 @@ References:
  - Purple Color Palettes
     - https://coolors.co/palette/ebe0ff-dac7ff-c7adff-ac8bee-916dd5-7151a9-573d7f-46325d-3f3649
 
-I'm not a big fan of blindly following internet tutorials, so I will be building a blog application similar enough to the tutorial where I can follow along, but distinct enough to truly call my own. I also plan to cut a couple of unnecessary features and add a couple of my own ones. I imagine a couple things need to modified anyways just because the tutorial happens to be from 2021 and it is currently 2023, so it is verrrrry out of date. 
+I'm not a big fan of blindly following internet tutorials, so I will be building a blog application similar enough to the tutorial where I can follow along, but distinct enough to truly call my own. I also plan to cut a couple of unnecessary features and add a couple of my own ones. I imagine a couple things need to modified anyways just because the tutorial happens to be two years out of date. 
 
-In the future, I would probably look at creating my own CMS either from scracth or using FOSS software like Strapi so I'm not beholden to a third party to have all my data stored/accessible.
+In the future, I would probably look at creating my own CMS either from scracth or using FOSS software like Strapi (https://strapi.io/) so I'm not beholden to a third party to have all my data stored/accessible.
 
 Technologies:
  - Next.js for the frontend routing
