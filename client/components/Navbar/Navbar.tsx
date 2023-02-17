@@ -16,7 +16,7 @@ const ThemeToggle = dynamic(() => import('./ThemeToggle'), {
  */
 export default function Navbar() {
     return (
-        <nav className=" bg-[color:var(--color-bg-secondary)] mx-auto p-3 flex flex-row items-center space-x-3">
+        <nav className=" bg-[color:var(--color-bg-secondary)] mx-auto mb-8 p-3 flex flex-row items-center space-x-3">
             <h2 className="text-3xl ">Raccoon Country</h2>
             <div className="flex-grow flex flex-row">
                 <h3 className="hidden md:block">Categories</h3>

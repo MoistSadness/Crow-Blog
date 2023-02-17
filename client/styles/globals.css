@@ -8,6 +8,8 @@ body[data-theme="light"] {
   --color-text-secondary: #573D7F;
   --color-bg-primary: #f3edff;
   --color-bg-secondary: #ffffff;
+  --color-button: #E83F6F;
+  --color-button-text: #ffffff;
 }
 
 body[data-theme="dark"] {
@@ -15,7 +17,8 @@ body[data-theme="dark"] {
   --color-text-secondary: #DAC7FF;
   --color-bg-primary: #413a46;
   --color-bg-secondary: #5e526e;
-  --color-button-primary: #AC8BEE;
+  --color-button: #c63c63;
+  --color-button-text: #ffffff;
 }
 
 body {
@@ -30,8 +33,8 @@ h1 {
 }
 
 .button{ 
-  color: var(--color-text-primary);
-  background-color: var(--color-button-primary);
+  color: var(--color-button-text);
+  background-color: var(--color-button);
 }
 
 .button--theme-toggle {

@@ -3,29 +3,41 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import { getPosts } from '../services/index.js'
+import PostCard from '../components/PostCard'
+import PostWidget from '../components/PostWidget'
+import Categories from '../components/Categories'
 
-export default function Home({posts}: any) {
+export default function Home({ posts }: any) {
+  /*
   function viewPosts() {
-
     console.log(posts)
-    
     return posts.map((post: any) => (
-      <ul>
+      <ul key={post.node.author.id}>
         <li>{post.node.author.name}</li>
         <li>{post.node.author.bio}</li>
       </ul>
     ))
-    
   }
+  */
+ 
 
   return (
-    <div>
+    <div className='container mx-auto px-40 mb-8'>
       <Head>
         <title>Blog</title>
       </Head>
 
-      <div></div>
-      {viewPosts()}
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
+        <div className='col-span-1 lg:col-span-8'>
+          {posts.map((post: any, index: number) => <PostCard key={index} {...post.node} />)}
+        </div>
+        <div className='col-span-1 lg:col-span-4'>
+          <div className='lg:sticky relative top-8'>
+            <PostWidget />
+            <Categories />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
