@@ -10,7 +10,7 @@ export default function PostCard(post: any) {
                 <span>{post.author.name}</span>
             </div>
             <div className="relative object-contain h-auto">
-                <img src={post.contentImg1.url} />
+                <img src={post.featuredImage.url} />
             </div>
             <h3>{post.title}</h3>
             <div>{moment(post.createdAt).format('MMM DD, YYYY')}</div>

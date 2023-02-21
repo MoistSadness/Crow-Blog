@@ -9,7 +9,7 @@ interface Category {
 
 export default function Categories(){
     const [categories, setCategories] = useState<any[]>([])
-    console.log(categories)
+    //console.log(categories)
 
     useEffect(() => {
         getCategories().then((data:any) => setCategories(data))

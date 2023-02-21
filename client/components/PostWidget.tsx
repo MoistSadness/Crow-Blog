@@ -29,7 +29,7 @@ export default function PostWidget({ category, slug }: Props) {
         return relatedPosts.map((post) => (
             <Link href={`/post/${post.slug}`} key={post.createdAt} className="flex flex-row">
                 <div className="h-20 w-20 relative object-cover">
-                    <Image src={post.contentImg1.url} className="object-cover" alt={post.title} fill sizes="20vw" />
+                    <Image src={post.featuredImage.url} className="object-cover" alt={post.title} fill sizes="20vw" />
                 </div>
                 <div className="flex flex-row">{post.title}</div>
             </Link>
