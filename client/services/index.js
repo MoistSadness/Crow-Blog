@@ -128,3 +128,60 @@ export const getPostDetails = async (slug) => {
   const result = await request(graphqlAPI, query, { slug })
   return result.post
 }
+
+export const submitComment = async (obj) => {
+  const result = await fetch('/api/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(obj),
+  })
+  return result.json()
+}
+
+export const getComments = async (slug) => {
+  const query = gql`
+    query GetComments($slug: String!){
+      comments(where:{post: {slug: $slug}}) {
+        name
+        createdAt
+        comment
+      }
+    }
+  `
+  const result = await request(graphqlAPI, query, { slug })
+  return result.comments
+}
+
+export const getPostsInCategory = async (slug) => {
+  const query = gql`
+    query MyQuery($slug: String!) {
+      postsConnection(where: {categories_some: {slug: $slug}}) {
+        edges {
+          node {
+            slug
+            title
+            author {
+              name
+              slug
+              profilePhoto {
+                url
+              }
+            }
+            featuredImage {
+              url
+              fileName
+            }
+            categories {
+              title
+              slug
+            }
+          }
+        }
+      }
+    }
+  `
+  const result = await request(graphqlAPI, query, { slug })
+  return result.postsConnection.edges
+}

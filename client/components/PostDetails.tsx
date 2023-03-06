@@ -1,4 +1,6 @@
 import moment from "moment"
+import Comments from "./Comments";
+import CommentsForm from "./CommentsForm";
 
 export default function PostDetails({ post }: any) {
     //console.log(post)
@@ -13,12 +15,12 @@ export default function PostDetails({ post }: any) {
             switch (typeObj.type) {
                 case 'image':
                     return (
-                        <img src={typeObj.src} />
+                        <img key={typeObj.src} src={typeObj.src} />
                     )
                     break;
                 case 'paragraph':
-                    return typeObj.children.map((paragraph: any) => (
-                        <p>{paragraph.text}</p>
+                    return typeObj.children.map((paragraph: any, index: Number) => (
+                        <p key={paragraph.text}>{paragraph.text}</p>
                     ))
                     break;
                 default:
@@ -38,7 +40,6 @@ export default function PostDetails({ post }: any) {
                 <img src={post.featuredImage.url} />
                 <span>{viewContent()}</span>
             </section>
-
         </div>
     )
 }

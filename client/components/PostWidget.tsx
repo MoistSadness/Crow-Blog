@@ -5,12 +5,14 @@ import moment from "moment"
 import { getSimilarPosts, getRecentPosts } from "../services"
 
 // Define a type for props
+/*
 interface Props {
     category: String,
     slug: Array<{}>
 }
+*/
 
-export default function PostWidget({ category, slug }: Props) {
+export default function PostWidget({ category, slug }: any) {
     const [relatedPosts, setRelatedPosts] = useState<any[]>([])
     //console.log(relatedPosts)
 

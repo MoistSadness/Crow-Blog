@@ -15,13 +15,13 @@ export default function PostLayout({ post }: any) {
                 <div className="bg-[color:var(--color-bg-secondary)] p-0 lg:py-8 lg:px-20 mb-8 pb-12 rounded">
                     <PostDetails post={post}/>
                     <Author author={post.author}/>
-                    <CommentsForm />
-                    <Comments />
+                    <CommentsForm slug={post.slug}/>
+                    <Comments slug={post.slug}/>
                 </div>
             </div>
             <div className='col-span-1 lg:col-span-4'>
                 <div className='lg:sticky relative top-8'>
-                    <PostWidget />
+                    <PostWidget/>
                     <Categories />
                 </div>
             </div>
@@ -41,6 +41,6 @@ export const getStaticPaths: any = async () => {
 
     return {
         paths: posts.map(({ node: { slug } }:any) => ({ params: { slug } })),
-        fallback: false //indicates the type of fallback
+        fallback: true //indicates the type of fallback
     }
 }
