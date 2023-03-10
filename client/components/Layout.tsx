@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: any }) {
                     <title>Raccoon Country</title>
                 </Head>
                 <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-                {children}
+                    {children}
                 </div>
             </div>
         </>
