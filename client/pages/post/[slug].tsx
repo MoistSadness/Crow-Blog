@@ -12,7 +12,7 @@ export default function PostLayout({ post }: any) {
     return (
         <>
             <div className='col-span-1 lg:col-span-8'>
-                <div className="bg-[color:var(--color-bg-secondary)] p-0 lg:py-8 lg:px-20 mb-8 pb-12 rounded">
+                <div className="bg-[color:var(--color-bg-secondary)] p-4 lg:py-8 lg:px-20 mb-8 pb-12 rounded">
                     <PostDetails post={post}/>
                     <Author author={post.author}/>
                     <CommentsForm slug={post.slug}/>

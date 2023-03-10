@@ -1,6 +1,5 @@
 
 import { getCategories, getPostsInCategory } from "../../services"
-import CategoryCard from "../../components/CategoryCard"
 import PostCard from "../../components/PostCard"
 
 export default function PostLayout({ post }: any) {
@@ -8,14 +7,12 @@ export default function PostLayout({ post }: any) {
 
     function displayPosts() {
         return post.map((post: any, index: number) => (
-            <div className='col-span-1 lg:col-span-8'>
-                <PostCard key={index} {...post.node} />
+            <div key={index} className='col-span-1 lg:col-span-8'>
+                <PostCard {...post.node} />
             </div>
         ))
     }
     return (
-
-
         <>
             {displayPosts()}
         </>

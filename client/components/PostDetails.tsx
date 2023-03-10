@@ -15,12 +15,12 @@ export default function PostDetails({ post }: any) {
             switch (typeObj.type) {
                 case 'image':
                     return (
-                        <img key={typeObj.src} src={typeObj.src} />
+                        <img className="rounded mb-4" key={typeObj.src} src={typeObj.src} />
                     )
                     break;
                 case 'paragraph':
                     return typeObj.children.map((paragraph: any, index: Number) => (
-                        <p key={paragraph.text}>{paragraph.text}</p>
+                        <p className="font-light mb-4" key={paragraph.text}>{paragraph.text}</p>
                     ))
                     break;
                 default:
@@ -31,13 +31,13 @@ export default function PostDetails({ post }: any) {
     }
 
     return (
-        <div>
-            <section>
-                <span>{post.title}</span>
-                <div>{moment(post.createdAt).format('MMM DD, YYYY')}</div>
+        <div className="">
+            <section className="flex flex-col">
+                <span className="text-2xl mb-2">{post.title}</span>
+                <div className="text-sm self-end mx-4 mb-4">{moment(post.createdAt).format('MMM DD, YYYY')}</div>
             </section>
             <section>
-                <img src={post.featuredImage.url} />
+                <img className="rounded mb-4" src={post.featuredImage.url} />
                 <span>{viewContent()}</span>
             </section>
         </div>

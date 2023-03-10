@@ -17,14 +17,14 @@ export default function Categories(){
 
     function viewCategories(){
         return categories.map((category: Category, index: any) => (
-            <div key={index}>
+            <div className="mb-2" key={index}>
                 <Link href={`/categories/${category.slug}`}>{category.title}</Link>
             </div>
         ))
     }
 
     return(
-        <div className="bg-[color:var(--color-bg-secondary)] p-0 lg:p-8 mb-8 pb-12 rounded">
+        <div className="bg-[color:var(--color-bg-secondary)] p-4 lg:py-8 lg:px-10 mb-8 pb-12 rounded">
             <h3 className="text-xl mb-4">Categories</h3>
             {viewCategories()}
         </div>

@@ -44,18 +44,20 @@ export default function CommentsForm({ slug }: any) {
     }
 
     return (
-        <div>
-            <h3>Join the Conversation</h3>
+        <div className="flex flex-col mb-4">
+            <h3 className="text-xl mb-4">Join the Conversation</h3>
             <div>
                 <textarea
+                    className="bg-[color:var(--color-bg-primary)] text-[color:var(--color-text-primary)] p-2 rounded w-full h-20 mb-2"
                     ref={commentRef}
                     name="comment"
                     id="comment"
                     placeholder="Your Comment"
                 />
             </div>
-            <div>
+            <div className="flex flex-row space-x-4 mb-4">
                 <input
+                    className="grow bg-[color:var(--color-bg-primary)] text-[color:var(--color-text-primary)] p-2 rounded w-full h-10"
                     type="text"
                     ref={nameRef}
                     name="name"
@@ -63,6 +65,7 @@ export default function CommentsForm({ slug }: any) {
                     placeholder="Name"
                 />
                 <input
+                className="grow bg-[color:var(--color-bg-primary)] text-[color:var(--color-text-primary)] p-2 rounded w-full h-10"
                     type="text"
                     ref={emailRef}
                     name="email"
@@ -72,8 +75,8 @@ export default function CommentsForm({ slug }: any) {
             </div>
             {error && <p>There was an error!</p>}
             {/* When the comment is submitted, remove the submit button so no redundant comments can be made */}
-            {success === false && <button onClick={success ? nothing : handleSubmit}>Submit</button>}
-            {success && <div>Comment submitted for review</div>}
+            {success === false && <button className='button w-44 h-12 rounded-lg transition duration-500 hover:brightness-75 mb-4' onClick={success ? nothing : handleSubmit}>Submit</button>}
+            {success && <div className="text-[color:var(--color-button)-md]">Comment submitted for review</div>}
         </div>
     )
 }

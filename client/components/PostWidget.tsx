@@ -29,8 +29,8 @@ export default function PostWidget({ category, slug }: any) {
 
     function viewRecentPosts() {
         return relatedPosts.map((post) => (
-            <Link href={`/post/${post.slug}`} key={post.createdAt} className="flex flex-row">
-                <div className="h-20 w-20 relative object-cover">
+            <Link href={`/post/${post.slug}`} key={post.createdAt} className="flex flex-row space-x-8 mb-4">
+                <div className="h-16 w-16 relative object-cover">
                     <Image src={post.featuredImage.url} className="object-cover" alt={post.title} fill sizes="20vw" />
                 </div>
                 <div className="flex flex-row">{post.title}</div>
@@ -39,9 +39,8 @@ export default function PostWidget({ category, slug }: any) {
     }
 
     return (
-        <div className="bg-[color:var(--color-bg-secondary)] p-0 lg:p-8 mb-8 pb-12 rounded">
-            <h3>{slug ? 'Related' : 'Recent'}Posts</h3>
-            <br />
+        <div className="bg-[color:var(--color-bg-secondary)] p-4 lg:py-8 lg:px-10 mb-8 pb-12 rounded">
+            <h3 className="text-lg mb-4">{slug ? 'Related ' : 'Recent '}Posts</h3>
             <>
                 {viewRecentPosts()}
             </>
