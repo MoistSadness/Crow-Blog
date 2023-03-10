@@ -65,7 +65,7 @@ export default function CommentsForm({ slug }: any) {
                     placeholder="Name"
                 />
                 <input
-                className="grow bg-[color:var(--color-bg-primary)] text-[color:var(--color-text-primary)] p-2 rounded w-full h-10"
+                    className="grow bg-[color:var(--color-bg-primary)] text-[color:var(--color-text-primary)] p-2 rounded w-full h-10"
                     type="text"
                     ref={emailRef}
                     name="email"
