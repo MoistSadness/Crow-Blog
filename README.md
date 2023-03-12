@@ -1,7 +1,5 @@
 ## Raccoon Country is a blog dedicated to exposing the truth about raccoon related conspiracies.
 
----
-
 ## References:
  - Following along to: https://www.youtube.com/watch?app=desktop&v=HYv55DhgTuA
  - Dark mode toggle from https://electricanimals.com/articles/next-js-dark-mode-toggle
