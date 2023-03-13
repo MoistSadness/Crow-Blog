@@ -1,14 +1,23 @@
+import {useRouter} from "next/router"
+
 import PostDetails from "../../components/PostDetails"
 import PostWidget from "../../components/PostWidget"
 import Categories from "../../components/Categories"
 import Author from "../../components/Author"
 import Comments from "../../components/Comments"
 import CommentsForm from "../../components/CommentsForm"
+import Loader from "../../components/Loader"
 
 import { getPosts, getPostDetails } from "../../services"
 
 export default function PostLayout({ post }: any) {
     //console.log(post)
+
+    const router = useRouter()
+    if (router.isFallback){
+        return(<Loader />)
+    }
+
     return (
         <>
             <div className='col-span-1 lg:col-span-8'>

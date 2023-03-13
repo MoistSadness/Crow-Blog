@@ -1,9 +1,16 @@
+import { useRouter } from "next/router"
 
 import { getCategories, getPostsInCategory } from "../../services"
 import PostCard from "../../components/PostCard"
+import Loader from "../../components/Loader"
 
 export default function PostLayout({ post }: any) {
-    console.log(post)
+    //console.log(post)
+
+    const router = useRouter()
+    if (router.isFallback){
+        return(<Loader />)
+    }
 
     function displayPosts() {
         return post.map((post: any, index: number) => (
